@@ -1,0 +1,8 @@
+{
+  "not_empty": "{property} alanı boş bırakılamaz.",
+  "invalid_language": "Geçersiz bir dil girdiniz.",
+  "invalid_string": "{property} alanı metinsel olmalıdır.",
+  "validation.min_length": "{property} alanı en az {constraints.0} olabilir.",
+  "validation.max_length": "{property} alanı en çok {constraints.0} karakter olabilir.",
+  "invalid_charset": "{property}: {value} geçersiz karakter seti."
+}
