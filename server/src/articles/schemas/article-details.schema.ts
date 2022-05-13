@@ -6,12 +6,13 @@ import { TransformHelper } from "../../common/types/mongo/transform";
 
 export type ArticleDetailDocument = ArticleDetail & Document;
 
-@Schema(TransformHelper.defaultIdTransformer())
+@Schema({ ...TransformHelper.defaultIdTransformer(), id: true })
 export class ArticleDetail {
   @Prop({
     type: String,
     default: languages.TurkishDefault,
     enum: [languages.TurkishDefault, languages.EnglishDefault],
+    index: true,
   })
   lang: string;
 

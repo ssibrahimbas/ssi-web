@@ -5,6 +5,10 @@ export class TransformHelper {
     return {
       toJSON: {
         transform(doc, ret) {
+          if(Array.isArray(doc.details)) {
+            console.log('doc -> ', ret);
+          }
+        
           ret.id = ret._id;
           delete ret._id;
           delete ret.__v;

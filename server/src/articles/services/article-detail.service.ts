@@ -4,8 +4,8 @@ import { Model } from "mongoose";
 import {
   ArticleDetail,
   ArticleDetailDocument,
-} from "./schemas/article-details.schema";
-import { CreateArticleDetailDto } from "./dto/create-article.dto";
+} from "../schemas/article-details.schema";
+import { CreateArticleDetailDto } from "../dto/create-article.dto";
 
 @Injectable()
 export class ArticleDetailService {

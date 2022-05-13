@@ -9,12 +9,15 @@ import {
   i18nValidationErrorFactory,
   I18nValidationExceptionFilter,
 } from "nestjs-i18n";
+import FastifyMultipart from "@fastify/multipart";
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter()
   );
+  app.register(FastifyMultipart);
+  app.setGlobalPrefix("api");
   app.enableVersioning({
     type: VersioningType.URI,
   });

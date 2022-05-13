@@ -1,4 +1,5 @@
 {
   "create_success": "Articles created successfully.",
-  "fetch_success": "Articles fetched successfully."
+  "fetch_success": "Articles fetched successfully.",
+  "fetch_detail_success": "Article fetched successfully."
 }

@@ -7,7 +7,7 @@ import {
   ValidateNested,
 } from "class-validator";
 import { Type } from "class-transformer";
-import { ArticlesLang } from "../articles.lang";
+import { ArticlesLang } from "../types/articles.lang";
 import { i18nValidationMessage } from "nestjs-i18n";
 import { MetaCreateDto } from "../../common/types/seo/meta-create.dto";
 

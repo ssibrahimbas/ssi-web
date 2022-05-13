@@ -8,7 +8,7 @@ import {
 } from "class-validator";
 import { i18nValidationMessage } from "nestjs-i18n";
 import { Charset } from "../charset";
-import { ArticlesLang } from "../../../articles/articles.lang";
+import { ArticlesLang } from "../../../articles/types/articles.lang";
 
 export class MetaCreateDto {
   @IsNotEmpty({ message: i18nValidationMessage("validation.not_empty") })
