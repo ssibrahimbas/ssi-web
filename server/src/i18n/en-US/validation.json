@@ -1,9 +1,10 @@
 {
-
   "not_empty": "The {property} field cannot be left blank.",
   "invalid_language": "You have entered an invalid language.",
   "invalid_string": "The {property} field must be string.",
-  "validation.min_length": "The {property} field can be at least {constraints.0} characters.",
-  "validation.max_length": "The {property} field can be up to {constraints.0} characters.",
-  "invalid_charset": "{property}: The {value} is invalid charset."
+  "min_length": "The {property} field can be at least {constraints.0} characters.",
+  "max_length": "The {property} field can be up to {constraints.0} characters.",
+  "invalid_charset": "{property}: The {value} is invalid charset.",
+  "invalid_email": "You have entered an invalid email.",
+  "invalid_date": "You have entered an invalid date."
 }
