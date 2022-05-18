@@ -4,8 +4,6 @@ import { I18n, I18nContext } from "nestjs-i18n";
 import { CreateArticleDto } from "../dto/create-article.dto";
 import { ISuccessDataResult } from "../../common/types/result/ISuccessDataResult";
 import { Article } from "../../article";
-import { FastifyUploadGuard } from "src/common/guards/upload/fastify-upload.guard";
-import { File, MultipartFile } from "src/common/decorators/file/file.decorator";
 import { DefaultPaginationDto } from "src/common/dto/default-pagination.dto";
 import { GetArticleByIdDto } from "../dto/get-article-by-id.dto";
 
@@ -33,7 +31,11 @@ export class ArticlesV1Controller {
     @Param() paginationDto: DefaultPaginationDto,
     @I18n() i18n: I18nContext
   ): Promise<ISuccessDataResult<Array<Article>>> {
-    const response = await this.articlesService.findAll(i18n.lang, paginationDto.limit, paginationDto.page);
+    const response = await this.articlesService.findAll(
+      i18n.lang,
+      paginationDto.limit,
+      paginationDto.page
+    );
     return new ISuccessDataResult<Array<Article>>(
       i18n.t<string>("article.fetch_success"),
       response
@@ -44,8 +46,14 @@ export class ArticlesV1Controller {
   async getDetail(
     @Param() getArticleByIdDto: GetArticleByIdDto,
     @I18n() i18n: I18nContext
-  ) : Promise<ISuccessDataResult<Article>> {
-    const response = await this.articlesService.getDetail(getArticleByIdDto.id, i18n.lang);
-    return new ISuccessDataResult<Article>(i18n.t<string>("article.fetch_detail_success"), response);
+  ): Promise<ISuccessDataResult<Article>> {
+    const response = await this.articlesService.getDetail(
+      getArticleByIdDto.id,
+      i18n.lang
+    );
+    return new ISuccessDataResult<Article>(
+      i18n.t<string>("article.fetch_detail_success"),
+      response
+    );
   }
 }
