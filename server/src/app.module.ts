@@ -7,6 +7,7 @@ import * as path from "path";
 import { languages } from "./common/types/i18n";
 import { UserModule } from "./user/user.module";
 import { AuthModule } from "./auth/auth.module";
+import { ProjectsModule } from './projects/projects.module';
 import jwtConfig from "./config/jwt.config";
 import databaseConfig from "./config/database.config";
 import hashConfig from "./config/hash.config";
@@ -37,6 +38,7 @@ import hashConfig from "./config/hash.config";
     ArticlesModule,
     UserModule,
     AuthModule,
+    ProjectsModule,
   ],
   controllers: [],
   providers: [],

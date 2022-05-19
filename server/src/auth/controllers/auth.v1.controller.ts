@@ -5,7 +5,6 @@ import {
   Ip,
   Post,
   Request,
-  UseFilters,
   UseGuards,
 } from "@nestjs/common";
 import { I18n, I18nContext, I18nValidationExceptionFilter } from "nestjs-i18n";
@@ -21,7 +20,7 @@ import { LoginResultType } from "../types/auth-result.types";
   path: "auth",
   version: "1",
 })
-export class AuthController {
+export class AuthV1Controller {
   constructor(private authService: AuthService) {}
 
   @UseGuards(LocalAuthGuard)

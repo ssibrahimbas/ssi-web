@@ -2,7 +2,7 @@ import { I18nContext } from "nestjs-i18n";
 import { Injectable } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { LoginUserDto } from "src/user/dto/login-user.dto";
-import { User, UserDocument } from "src/user/schemas/user.schema";
+import { User } from "src/user/schemas/user.schema";
 import { UsersService } from "src/user/services/user.service";
 import { LoginResultType } from "../types/auth-result.types";
 import { RegisterUserDto } from "src/user/dto/register-user.dto";

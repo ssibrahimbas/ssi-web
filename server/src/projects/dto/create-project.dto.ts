@@ -1,4 +1,6 @@
+import { Type } from "class-transformer";
 import {
+  IsDefined,
   IsEnum,
   IsNotEmpty,
   IsString,
@@ -6,24 +8,23 @@ import {
   MinLength,
   ValidateNested,
 } from "class-validator";
-import { Type } from "class-transformer";
-import { ArticlesLang } from "../types/articles.lang";
 import { i18nValidationMessage } from "nestjs-i18n";
-import { MetaCreateDto } from "../../common/types/seo/meta-create.dto";
+import { LanguageKeys } from "src/common/types/i18n";
+import { MetaCreateDto } from "src/common/types/seo/meta-create.dto";
 
-export class CreateArticleDto {
+export class CreateProjectDto {
   @IsNotEmpty({ message: i18nValidationMessage("validation.not_empty") })
   @ValidateNested({ each: true })
-  @Type(() => CreateArticleDetailDto)
-  details: Array<CreateArticleDetailDto>;
+  @Type(() => CreateProjectDetailDto)
+  details: Array<CreateProjectDetailDto>;
 }
 
-export class CreateArticleDetailDto {
+export class CreateProjectDetailDto {
   @IsNotEmpty({ message: i18nValidationMessage("validation.not_empty") })
-  @IsEnum(ArticlesLang, {
+  @IsEnum(LanguageKeys, {
     message: i18nValidationMessage("validation.invalid_language"),
   })
-  lang: ArticlesLang;
+  lang: LanguageKeys;
 
   @IsNotEmpty({ message: i18nValidationMessage("validation.not_empty") })
   @IsString({ message: i18nValidationMessage("validation.invalid_string") })
@@ -34,10 +35,6 @@ export class CreateArticleDetailDto {
     message: i18nValidationMessage("validation.max_length"),
   })
   title: string;
-
-  @IsNotEmpty({ message: i18nValidationMessage("validation.not_empty") })
-  @IsString({ message: i18nValidationMessage("validation.invalid_string") })
-  cover: string;
 
   @IsNotEmpty({ message: i18nValidationMessage("validation.not_empty") })
   @IsString({ message: i18nValidationMessage("validation.invalid_string") })

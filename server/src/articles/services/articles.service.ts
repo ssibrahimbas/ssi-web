@@ -26,12 +26,16 @@ export class ArticlesService {
     return article.save();
   }
 
-  async findAll(lang: string, limit: number, page : number): Promise<Array<Article>> {
+  async findAll(
+    lang: string,
+    limit: number,
+    page: number
+  ): Promise<Array<Article>> {
     return this.articleModel
       .find({})
-      .sort({date: 1})
+      .sort({ time: 1 })
       .skip(limit * (page - 1))
-      .select(limit)
+      .limit(limit)
       .populate({
         path: "details",
         select: "lang title summary tags cover subject",
@@ -40,10 +44,16 @@ export class ArticlesService {
       .exec();
   }
 
-  async getDetail(id: mongoose.Schema.Types.ObjectId, lang: string): Promise<Article> {
-    return this.articleModel.findById(id).populate({
-      path: "details",
-      match: { lang: lang}
-    }).exec();
+  async getDetail(
+    id: mongoose.Schema.Types.ObjectId,
+    lang: string
+  ): Promise<Article> {
+    return this.articleModel
+      .findById(id)
+      .populate({
+        path: "details",
+        match: { lang: lang },
+      })
+      .exec();
   }
 }
