@@ -1,42 +1,11 @@
-# Nuxt 3 Minimal Starter
+<p align="center"><br><img src="https://avatars.githubusercontent.com/u/76786120?v=4" width="128" height="128" style="border-radius: 50px;" /></p>
+<h3 align="center">ssibrahimbas ssi-web/client</h3>
+<p align="center">
+  Client open source code of my new website
+</p>
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+### What Is?
 
-## Setup
+In this folder are the client codes I wrote for the new version of my website.
 
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+Since the project is still under development, I do not give a detailed explanation. The description will change in the future.
